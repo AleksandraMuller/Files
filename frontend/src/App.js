@@ -60,9 +60,10 @@ export const App = () => {
         <Table className={classes.table} aria-label="customized table">
           <TableHead>
             <TableRow>
+              <StyledTableCell></StyledTableCell>
               <StyledTableCell>File name</StyledTableCell>
               <StyledTableCell align="right">Description</StyledTableCell>
-              <StyledTableCell align="right">File Size(bytes)</StyledTableCell>
+              <StyledTableCell align="right">File Size (MB)</StyledTableCell>
               <StyledTableCell align="right">Created at</StyledTableCell>
               <StyledTableCell align="right">Author</StyledTableCell>
             </TableRow>

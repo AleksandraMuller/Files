@@ -8,3 +8,17 @@ export const fetchData = async (setError, setFiles) => {
     console.log(json);
   }
 };
+
+export const deleteFile = (id) => {
+  fetch(`http://localhost:9000/file/${id}`, {
+    method: 'DELETE',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((res) => res.json())
+    .then(() => {
+      window.location.reload();
+    });
+};

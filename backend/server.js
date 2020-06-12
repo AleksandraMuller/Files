@@ -58,6 +58,20 @@ app.get('/files', async (_, res) => {
   res.json(await File.find());
 });
 
+//DELETE ONE OBJECT FILE
+app.delete('/file/:_id', async (req, res) => {
+  const { _id } = req.params;
+
+  await File.findByIdAndDelete(_id, (err, files) => {
+    if (err) {
+      console.log(err);
+      res.status(404).json({ error: 'Not deleted' });
+    } else {
+      res.json(files);
+    }
+  });
+});
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
