@@ -55,7 +55,7 @@ app.get('/', (_, res) => {
 });
 
 app.get('/files', async (_, res) => {
-  res.json(await File.find());
+  res.json(await File.find().sort({ createdAt: 'desc' }));
 });
 
 //DELETE ONE OBJECT FILE

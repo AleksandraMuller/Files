@@ -32,7 +32,6 @@ export const FileItem = ({ file, index, files }) => {
 
   const handleDelete = (index) => {
     const foundOne = files[index]._id;
-    const id = files.filter((file) => file._id === foundOne._id);
     deleteFile(foundOne);
   };
   return (
